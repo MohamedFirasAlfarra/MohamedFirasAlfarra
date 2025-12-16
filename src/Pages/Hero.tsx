@@ -84,15 +84,25 @@ export const Hero = () => {
                 <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
               </a>
               
-              <a
-  href="/MohamedFirasAlfarra/Front-End_CV.pdf"
-  download
-  className="group px-6 py-3 md:px-8 md:py-3.5 border-2 border-blue-600 dark:border-cyan-500 rounded-lg md:rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 text-blue-600 dark:text-cyan-500 hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-600 hover:text-white hover:border-transparent hover:shadow-lg hover:scale-105"
->
-  <Download className="w-4 h-4 md:w-5 md:h-5" />
-  <span>Download CV</span>
-</a>
-
+              {/* <button
+                onClick={handleDownloadCV}
+                disabled={isDownloading}
+                className={`group px-6 py-3 md:px-8 md:py-3.5 border-2 border-blue-600 dark:border-cyan-500 rounded-lg md:rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
+                  isDownloading 
+                    ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white cursor-wait' 
+                    : 'text-blue-600 dark:text-cyan-500 hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-600 hover:text-white hover:border-transparent hover:shadow-lg md:hover:shadow-xl hover:shadow-cyan-500/25 dark:hover:shadow-cyan-500/10 hover:scale-105'
+                }`}
+              >
+                <Download className={`w-4 h-4 md:w-5 md:h-5 ${isDownloading ? 'animate-bounce' : 'group-hover:animate-pulse'}`} />
+                <span>
+                  {isDownloading ? 'Downloading...' : 'Download CV'}
+                </span>
+                {!isDownloading && (
+                  <span className="hidden sm:inline text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                    PDF
+                  </span>
+                )}
+              </button> */}
             </div>
           </div>
 
