@@ -7,7 +7,7 @@ export const Projects = () => {
       description: 'React.js, TailwindCSS | Responsive barbershop booking website with multiple service sections (VIP, classic, skincare, bridal). Improved booking flow and usability across devices.',
       image: '/src/asset/HairCut.jpg',
       tags: ['React', 'JavaScript', 'Supabase', 'TailwindCss'],
-      liveUrl: 'https://mohamedfirasalfarra.github.io/EliteCuts/﻿',
+      liveUrl: 'https://mohamedfirasalfarra.github.io/EliteCuts/',
       
     },
     {
