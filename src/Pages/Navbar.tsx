@@ -55,7 +55,7 @@ export const Navbar = () => {
   };
 
   const handleDownloadCV = () => {
-    const pdfUrl = '/cv.pdf';
+    const pdfUrl = '/MohamedFirasAlfarra/Front-End_CV.pdf';
     const link = document.createElement('a');
     link.href = pdfUrl;
     link.download = 'Front-End_CV.pdf';

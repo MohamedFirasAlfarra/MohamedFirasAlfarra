@@ -8,7 +8,7 @@ export const Hero = () => {
   const handleDownloadCV = () => {
     setIsDownloading(true);
     
-    const pdfUrl = '/cv.pdf';
+    const pdfUrl = '/MohamedFirasAlfarra/Front-End_CV.pdf';
     const link = document.createElement('a');
     link.href = pdfUrl;
     link.download = 'Front-End_CV.pdf';
