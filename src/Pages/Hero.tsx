@@ -1,5 +1,6 @@
 import { ArrowDown, Download, Sparkles } from 'lucide-react';
 import { useState } from 'react';
+import profileImage from "../asset/image.png";
 
 export const Hero = () => {
   const [isDownloading, setIsDownloading] = useState(false);
@@ -118,11 +119,12 @@ export const Hero = () => {
               
                 <div className="flex-1 w-full flex justify-center lg:justify-end lg:items-end h-[600px] lg:h-[calc(100vh-100px)] mt-8 lg:mt-0">
             <div className="relative w-full h-full max-w-[500px] max-h-[1000px]">
-              <img
-                src="./src/asset/image.png"
-                alt="Mohamed Firas Alfarra - Frontend Developer"
-                className="w-full h-full object-cover object-center rounded-l-[40px] lg:rounded-l-[60px]"
-              />
+             <img
+  src={profileImage}
+  alt="Mohamed Firas Alfarra - Frontend Developer"
+  className="w-full h-full object-cover object-center rounded-l-[40px] lg:rounded-l-[60px]"
+/>
+
             </div>
           </div>
               </div>

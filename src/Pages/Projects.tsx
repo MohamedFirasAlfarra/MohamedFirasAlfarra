@@ -1,79 +1,73 @@
 import { ExternalLink, Github } from 'lucide-react';
+import haircutImg from "../asset/HairCut.jpg";
+import sportsClubImg from "../asset/SportsClub.png";
+import baddarFurnitureImg from "../asset/baddarfurniture.jpg";
+import familyCareImg from "../asset/familycare.png";
+import ymediaImg from "../asset/ymedia.png";
+import silverRoosterImg from "../asset/Silverrooster.jpg";
+import park4NightImg from "../asset/Park4Night.png";
+import ubookImg from "../asset/UBook.png";
 
 export const Projects = () => {
-  const projects = [
-    {
-      title: 'HairCut',
-      description: 'React.js, TailwindCSS | Responsive barbershop booking website with multiple service sections (VIP, classic, skincare, bridal). Improved booking flow and usability across devices.',
-      image: '/src/asset/HairCut.jpg',
-      tags: ['React', 'JavaScript', 'Supabase', 'TailwindCss'],
-      liveUrl: 'https://mohamedfirasalfarra.github.io/EliteCuts/',
-      
-    },
-    {
-      title: 'Sports Club',
-      description: 'React.js, TailwindCSS | Fitness and bodybuilding website featuring workouts, nutrition plans, Zumba, and slimming/bulking programs.',
-      image: '/src/asset/SportsClub.png',
-      tags: ['React', 'JavaScript', 'Supabase', 'TailwindCss'],
-      liveUrl: 'https://mohamedfirasalfarra.github.io/Body-Building/',
-      
-    },
-    {
-      title: 'baddarfurniture',
-      description: 'Nuxt.js, Bootstrap | Corporate furniture website for a UAE-based company. Built responsive UI with elegant design aligned to brand identity.',
-      image: '/src/asset/baddarfurniture.jpg',
-      tags: ['Nuxt.js', 'Bootstrap', 'Node.js'],
-      liveUrl: 'https://baddarfurniture.com/',
-      
-    },
-    {
-      title: 'FamilyCare',
-      description: 'Nuxt.js, Bootstrap | E-commerce platform for beauty, hair, and skincare products, designed for smooth shopping experience and responsive UI.',
-      image: '/src/asset/familycare.png',
-      tags: ['Nuxt.js', 'Bootstrap', 'Node.js'],
-      liveUrl: 'https://familycareuae.net',
-      
-    },
-    {
-      title: 'ymediaDesign',
-      description: 'React.js, Tailwind CSS, Supabase | Team of passionate creatives dedicated to helping brands thrive in the digital world through innovative design and strategic thinking.',
-      image: '/src/asset/ymedia.png',
-      tags: ['React.js', 'TailwindCss', 'Supabase'],
-      liveUrl: 'https://ymedia.design',
-      
-    },
-    {
-      title: 'SilverRooster',
-      description: 'React.js, Tailwind CSS, Supabase | best fresh and healthy chicken products to our customers. We believe that quality starts from the source.',
-      image: '/src/asset/Silverrooster.jpg',
-      tags: ['React.js', 'TailwindCss', 'Supabase'],
-      liveUrl: 'https://silver-rooster.vercel.app',
-      
-    },
-    {
-      title: 'Park4Night',
-      description: 'Flutter/Dart | Mobile app helping vanlifers, campers, and RV users find parking and camping spots with an intuitive interface.',
-      image: '/src/asset/Park4Night.png',
-      tags: ['Flutter', 'Dart', 'Supabase'],
-      liveUrl: '#',
-      
-    },
-    {
-      title: 'UBook',
-      description: 'Flutter/Dart | Social reading app offering book recommendations, clubs, and reading diaries to make reading more interactive and engaging.',
-      image: '/src/asset/UBook.png',
-      tags: ['Flutter', 'Dart'],
-      liveUrl: '#',
-      
-    },
-    // {
-    //   title: 'Paints',
-    //   description: 'Flutter/Dart | It is a mobile app tha is your trusted partner for high-quality paints and art supplies. We serve both professional artists and passionate hobbyists.',
-    //   tags: ['Flutter', 'Dart', 'Supabase'],
-    //   liveUrl: '#',
-      
-    // },
-  ];
+const projects = [
+  {
+    title: 'HairCut',
+    description: 'React.js, TailwindCSS | Responsive barbershop booking website with multiple service sections (VIP, classic, skincare, bridal). Improved booking flow and usability across devices.',
+    image: haircutImg,
+    tags: ['React', 'JavaScript', 'Supabase', 'TailwindCss'],
+    liveUrl: 'https://mohamedfirasalfarra.github.io/EliteCuts/',
+  },
+  {
+    title: 'Sports Club',
+    description: 'React.js, TailwindCSS | Fitness and bodybuilding website featuring workouts, nutrition plans, Zumba, and slimming/bulking programs.',
+    image: sportsClubImg,
+    tags: ['React', 'JavaScript', 'Supabase', 'TailwindCss'],
+    liveUrl: 'https://mohamedfirasalfarra.github.io/Body-Building/',
+  },
+  {
+    title: 'baddarfurniture',
+    description: 'Nuxt.js, Bootstrap | Corporate furniture website for a UAE-based company. Built responsive UI with elegant design aligned to brand identity.',
+    image: baddarFurnitureImg,
+    tags: ['Nuxt.js', 'Bootstrap', 'Node.js'],
+    liveUrl: 'https://baddarfurniture.com/',
+  },
+  {
+    title: 'FamilyCare',
+    description: 'Nuxt.js, Bootstrap | E-commerce platform for beauty, hair, and skincare products, designed for smooth shopping experience and responsive UI.',
+    image: familyCareImg,
+    tags: ['Nuxt.js', 'Bootstrap', 'Node.js'],
+    liveUrl: 'https://familycareuae.net',
+  },
+  {
+    title: 'ymediaDesign',
+    description: 'React.js, Tailwind CSS, Supabase | Team of passionate creatives dedicated to helping brands thrive in the digital world through innovative design and strategic thinking.',
+    image: ymediaImg,
+    tags: ['React.js', 'TailwindCss', 'Supabase'],
+    liveUrl: 'https://ymedia.design',
+  },
+  {
+    title: 'SilverRooster',
+    description: 'React.js, Tailwind CSS, Supabase | best fresh and healthy chicken products to our customers. We believe that quality starts from the source.',
+    image: silverRoosterImg,
+    tags: ['React.js', 'TailwindCss', 'Supabase'],
+    liveUrl: 'https://silver-rooster.vercel.app',
+  },
+  {
+    title: 'Park4Night',
+    description: 'Flutter/Dart | Mobile app helping vanlifers, campers, and RV users find parking and camping spots with an intuitive interface.',
+    image: park4NightImg,
+    tags: ['Flutter', 'Dart', 'Supabase'],
+    liveUrl: '#',
+  },
+  {
+    title: 'UBook',
+    description: 'Flutter/Dart | Social reading app offering book recommendations, clubs, and reading diaries to make reading more interactive and engaging.',
+    image: ubookImg,
+    tags: ['Flutter', 'Dart'],
+    liveUrl: '#',
+  },
+];
+
 
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
