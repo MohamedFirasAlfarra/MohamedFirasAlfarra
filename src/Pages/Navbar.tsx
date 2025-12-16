@@ -126,14 +126,15 @@ export const Navbar = () => {
                 );
               })}
 
-              <button
-                onClick={handleDownloadCV}
-                className="ml-2 flex items-center gap-2 px-4 py-2.5 md:px-5 md:py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl font-semibold hover:shadow-xl hover:shadow-blue-500/25 dark:shadow-blue-500/10 hover:scale-105 transition-all duration-300 group"
-              >
-                <Download className="w-4 h-4 group-hover:animate-bounce" />
-                <span className="hidden md:inline">Download CV</span>
-                <span className="md:hidden">CV</span>
-              </button>
+              <a
+  href="/MohamedFirasAlfarra/Front-End_CV.pdf"
+  download
+  className="group px-6 py-3 md:px-8 md:py-3.5 border-2 border-blue-600 dark:border-cyan-500 rounded-lg md:rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 text-blue-600 dark:text-cyan-500 hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-600 hover:text-white hover:border-transparent hover:shadow-lg hover:scale-105"
+>
+  <Download className="w-4 h-4 md:w-5 md:h-5" />
+  <span>Download CV</span>
+</a>
+
 
               <button
                 onClick={toggleTheme}
