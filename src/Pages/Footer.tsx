@@ -68,19 +68,16 @@ export const Footer = () => {
 
   return (
     <footer className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-gray-100 dark:from-gray-950 dark:via-gray-900 dark:to-black text-gray-800 dark:text-gray-200 transition-all duration-500">
-      {/* تأثيرات الخلفية */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-purple-100/20 via-blue-100/10 to-cyan-100/20 dark:from-purple-900/10 dark:via-blue-900/5 dark:to-cyan-900/10 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-tl from-cyan-100/20 via-blue-100/10 to-purple-100/20 dark:from-cyan-900/10 dark:via-blue-900/5 dark:to-purple-900/10 rounded-full blur-3xl"></div>
         
-        {/* خطوط شبكية */}
         <div className="absolute inset-0 opacity-10 dark:opacity-[0.03]">
           <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_1px,theme(colors.gray.400)_1px)] dark:bg-[linear-gradient(90deg,transparent_1px,white_1px)] bg-[size:40px_40px]"></div>
           <div className="absolute inset-0 bg-[linear-gradient(transparent_1px,theme(colors.gray.400)_1px)] dark:bg-[linear-gradient(transparent_1px,white_1px)] bg-[size:40px_40px]"></div>
         </div>
       </div>
 
-      {/* زر العودة للأعلى */}
       <button
         onClick={scrollToTop}
         className="fixed bottom-8 right-8 z-40 w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-300/50 dark:border-gray-700/50 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
@@ -90,12 +87,9 @@ export const Footer = () => {
       </button>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* القسم العلوي */}
         <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 py-12 lg:py-16">
-          {/* معلومات الاتصال */}
           <div className="lg:col-span-2">
             <div className="flex flex-col md:flex-row items-start gap-8">
-              {/* الشعار والمعلومات */}
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="relative">
@@ -138,7 +132,6 @@ export const Footer = () => {
                 </div>
               </div>
 
-              {/* الخدمات */}
               <div className="flex-1">
                 <h4 className="text-lg font-bold mb-6 pb-3 border-b border-gray-300/50 dark:border-gray-700/50 flex items-center gap-2">
                   <Sparkles className="w-5 h-5 text-purple-500 dark:text-purple-400" />
@@ -159,7 +152,6 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* الروابط السريعة */}
           <div>
             <h4 className="text-lg font-bold mb-6 pb-3 border-b border-gray-300/50 dark:border-gray-700/50 flex items-center gap-2">
               <ExternalLink className="w-5 h-5 text-purple-500 dark:text-purple-400" />
@@ -184,7 +176,6 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* وسائل التواصل الاجتماعي */}
         <div className="py-8 border-t border-gray-300/50 dark:border-gray-700/50">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             <div className="text-center lg:text-left">
@@ -231,21 +222,15 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* القسم السفلي */}
         <div className="py-8 border-t border-gray-300/50 dark:border-gray-700/50">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
   
           </div>
-
-          {/* إحصائيات إضافية */}
-        
         </div>
       </div>
 
-      {/* الخط المتحرك */}
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 dark:from-purple-600 dark:via-pink-600 dark:to-blue-600"></div>
 
-      {/* إضافة الأنيميشن في CSS */}
       <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0); }
@@ -261,7 +246,6 @@ export const Footer = () => {
           animation: pulse 2s ease-in-out infinite;
         }
         
-        /* تحسينات للشاشات الصغيرة جداً */
         @media (max-width: 320px) {
           .px-4 {
             padding-left: 1rem;
@@ -272,14 +256,12 @@ export const Footer = () => {
           }
         }
         
-        /* تحسينات للأجهزة اللوحية */
         @media (min-width: 768px) and (max-width: 1023px) {
           .lg\:grid-cols-3 {
             grid-template-columns: repeat(2, 1fr);
           }
         }
         
-        /* تحسينات للشاشات الكبيرة */
         @media (min-width: 1920px) {
           .container {
             max-width: 1440px;

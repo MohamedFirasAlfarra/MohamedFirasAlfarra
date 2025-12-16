@@ -13,7 +13,6 @@ export const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
       
-      // تتبع القسم النشط
       const sections = ['home', 'about', 'projects', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
@@ -26,9 +25,8 @@ export const Navbar = () => {
       if (current) setActiveSection(current);
     };
 
-    // كشف حجم الشاشة
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024); // أقل من lg breakpoint
+      setIsMobile(window.innerWidth < 1024);
     };
 
     checkMobile();
@@ -60,7 +58,7 @@ export const Navbar = () => {
     const pdfUrl = '/cv.pdf';
     const link = document.createElement('a');
     link.href = pdfUrl;
-    link.download = 'Mohamed_Firas_Alfarra_CV.pdf';
+    link.download = 'Front-End_CV.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -68,7 +66,6 @@ export const Navbar = () => {
 
   return (
     <>
-      {/* تأثير Blur للخلفية على الجوال عندما تكون القائمة مفتوحة */}
       {isOpen && isMobile && (
         <div 
           className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-xl z-40 transition-all duration-500"
@@ -85,7 +82,6 @@ export const Navbar = () => {
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16">
-            {/* الشعار */}
             <div className="flex items-center gap-2 sm:gap-3">
               <div className="relative hidden sm:block">
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full blur opacity-30"></div>
@@ -98,7 +94,6 @@ export const Navbar = () => {
               </a>
             </div>
 
-            {/* روابط التنقل لشاشات الكمبيوتر */}
             <div className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) => {
                 const Icon = link.icon;
@@ -153,7 +148,6 @@ export const Navbar = () => {
               </button>
             </div>
 
-            {/* القائمة المدمجة للشاشات الصغيرة والمتوسطة */}
             <div className="hidden md:flex lg:hidden items-center gap-1 sm:gap-2">
               {navLinks.slice(0, 2).map((link) => {
                 const Icon = link.icon;
@@ -219,7 +213,6 @@ export const Navbar = () => {
               </button>
             </div>
 
-            {/* زر القائمة للجوال */}
             <div className="flex md:hidden items-center gap-1 sm:gap-2">
               <button
                 onClick={toggleTheme}
@@ -245,7 +238,6 @@ export const Navbar = () => {
         </div>
       </nav>
 
-      {/* القائمة الجانبية للجوال */}
       <div
         className={`lg:hidden fixed inset-y-0 right-0 w-full max-w-xs sm:max-w-sm bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-2xl transform transition-all duration-500 ease-in-out z-50 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'

@@ -52,7 +52,6 @@ export const About = () => {
   return (
     <section id="about" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-black transition-colors duration-500">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* العنوان الرئيسي */}
         <div className="text-center mb-12 sm:mb-16 lg:mb-20 animate-fade-in-up">
           <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-gradient-to-r from-purple-500/10 to-blue-500/10 dark:from-purple-600/10 dark:to-blue-600/10 rounded-full border border-purple-400/30 dark:border-purple-500/30">
             <User className="w-4 h-4 text-purple-500 dark:text-purple-400" />
@@ -127,9 +126,7 @@ export const About = () => {
             </div>
           </div>
 
-          {/* الجانب الأيمن: المحتوى التفاعلي */}
           <div className="lg:w-3/5">
-            {/* أزرار التبويب */}
             <div className="flex flex-wrap gap-2 mb-8">
               <button
                 onClick={() => setActiveTab('skills')}
@@ -155,7 +152,6 @@ export const About = () => {
               </button>
             </div>
 
-            {/* محتوى التبويب النشط */}
             <div className="animate-fade-in">
               {activeTab === 'skills' && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -263,7 +259,6 @@ export const About = () => {
           animation: fade-in 0.5s ease-out forwards;
         }
         
-        /* تحسينات للشاشات الصغيرة جداً */
         @media (max-width: 320px) {
           .text-3xl {
             font-size: 1.75rem;
@@ -274,7 +269,6 @@ export const About = () => {
           }
         }
         
-        /* تحسينات للأجهزة اللوحية */
         @media (min-width: 768px) and (max-width: 1023px) {
           .lg\:flex-row {
             flex-direction: column;

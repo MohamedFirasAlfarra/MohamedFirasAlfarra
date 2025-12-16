@@ -11,7 +11,7 @@ export const Hero = () => {
     const pdfUrl = '/cv.pdf';
     const link = document.createElement('a');
     link.href = pdfUrl;
-    link.download = 'Mohamed_Firas_Alfarra_CV.pdf';
+    link.download = 'Front-End_CV.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -21,14 +21,12 @@ export const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-cyan-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300">
-      {/* تأثيرات الخلفية */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-blue-400/20 via-purple-400/10 to-cyan-400/20 dark:from-blue-600/10 dark:via-purple-600/5 dark:to-cyan-600/10 rounded-full blur-xl md:blur-3xl animate-blob"></div>
         <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-tl from-cyan-400/20 via-blue-400/10 to-purple-400/20 dark:from-cyan-600/10 dark:via-blue-600/5 dark:to-purple-600/10 rounded-full blur-xl md:blur-3xl animate-blob animation-delay-2000"></div>
         <div className="absolute top-1/2 left-1/3 w-40 h-40 md:w-64 md:h-64 bg-gradient-to-r from-purple-400/10 to-pink-400/10 dark:from-purple-600/5 dark:to-pink-600/5 rounded-full blur-lg md:blur-2xl animate-blob animation-delay-4000"></div>
       </div>
 
-      {/* الجسيمات المتحركة */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(3)].map((_, i) => (
           <div
@@ -108,45 +106,35 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* تصميم الصورة الدائرية - يأتي أولاً على الشاشات الصغيرة */}
           <div className="flex-1 w-full flex justify-center lg:justify-end order-first lg:order-last">
             <div className="relative animate-fade-in-up animation-delay-200">
-              {/* الإطار الخارجي الدائري */}
-              {/* <div className="absolute -inset-4 md:-inset-6 lg:-inset-8 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 rounded-full blur-lg md:blur-xl lg:blur-2xl opacity-30 animate-pulse"></div> */}
-              
-              {/* طبقات الإطار الدائري */}
               <div className="relative">
-              
                 <div className="flex-1 w-full flex justify-center lg:justify-end lg:items-end h-[600px] lg:h-[calc(100vh-100px)] mt-8 lg:mt-0">
             <div className="relative w-full h-full max-w-[500px] max-h-[1000px]">
              <img
-  src={profileImage}
-  alt="Mohamed Firas Alfarra - Frontend Developer"
-  className="w-full h-full object-cover object-center rounded-l-[40px] lg:rounded-l-[60px]"
-/>
+                src={profileImage}
+                alt="Mohamed Firas Alfarra - Frontend Developer"
+                className="w-full h-full object-cover object-center rounded-l-[40px] lg:rounded-l-[60px] drop-shadow-md"
+                style={{filter : "dropshadow"}}
+              />
 
             </div>
           </div>
               </div>
 
-              {/* حلقات دائرية متحركة */}
               <div className="absolute -inset-3 md:-inset-4 lg:-inset-6 border-2 border-dashed border-blue-400/20 dark:border-blue-500/10 rounded-full animate-spin-slow"></div>
               
-              {/* دائرة دوارة كبيرة */}
               <div className="absolute -top-4 -right-4 md:-top-6 md:-right-6 lg:-top-8 lg:-right-8 w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-40 xl:h-40 border-2 md:border-3 lg:border-4 border-blue-400/20 dark:border-blue-500/15 rounded-full animate-spin-slow">
                 <div className="absolute inset-3 md:inset-4 lg:inset-6 border border-cyan-400/15 rounded-full"></div>
               </div>
               
-              {/* دائرة دوارة صغيرة */}
               <div className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 lg:-bottom-8 lg:-left-8 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-32 xl:h-32 border-2 md:border-3 lg:border-4 border-cyan-400/20 dark:border-cyan-500/15 rounded-full animate-spin-slow-reverse">
                 <div className="absolute inset-2 md:inset-3 lg:inset-4 border border-purple-400/15 rounded-full"></div>
               </div>
               
-              {/* نقاط مضيئة */}
               <div className="absolute top-4 right-8 md:top-6 md:right-12 w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full blur-sm md:blur-md opacity-50 animate-pulse"></div>
               <div className="absolute bottom-8 left-4 md:bottom-12 md:left-6 w-3 h-3 md:w-4 md:h-4 lg:w-6 lg:h-6 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full blur-sm md:blur-md opacity-50 animate-pulse animation-delay-700"></div>
               
-              {/* دوائر زخرفية */}
               <div className="absolute -inset-6 md:-inset-8 lg:-inset-12">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative w-full h-full animate-spin-slow-reverse">
@@ -160,7 +148,6 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* سهم التنقل للأسفل */}
         <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2">
           <a 
             href="#about" 
