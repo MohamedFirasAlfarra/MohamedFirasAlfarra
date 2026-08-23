@@ -1,4 +1,4 @@
-import { Heart, Github, Linkedin, Instagram, Mail, ArrowUp, Sparkles, Code2, Palette, MapPin, Phone, ExternalLink } from 'lucide-react';
+import { Heart, Github, Linkedin, Instagram, Mail, ArrowUp, Sparkles, Code2, Palette, MapPin, Phone, ExternalLink, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -34,6 +34,15 @@ export const Footer = () => {
       bgColor: 'hover:bg-gradient-to-br hover:from-pink-600 hover:to-purple-700',
       borderColor: 'border-pink-500/30 dark:border-pink-400/30',
       iconColor: 'text-pink-500 dark:text-pink-400 group-hover:text-white'
+    },
+    { 
+      icon: MessageCircle, 
+      label: 'WhatsApp', 
+      href: 'https://wa.me/963940319051',
+      username: '+963940319051',
+      bgColor: 'hover:bg-gradient-to-br hover:from-green-600 hover:to-green-700',
+      borderColor: 'border-green-500/30 dark:border-green-400/30',
+      iconColor: 'text-green-500 dark:text-green-400 group-hover:text-white'
     },
     { 
       icon: Mail, 
@@ -85,6 +94,16 @@ export const Footer = () => {
       >
         <ArrowUp className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors" />
       </button>
+
+      <a
+        href="https://wa.me/963940319051"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-8 left-8 z-40 w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
+        aria-label="WhatsApp"
+      >
+        <MessageCircle className="w-5 h-5 group-hover:animate-pulse" />
+      </a>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 py-12 lg:py-16">
@@ -224,7 +243,26 @@ export const Footer = () => {
 
         <div className="py-8 border-t border-gray-300/50 dark:border-gray-700/50">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-  
+            <div className="text-center md:text-left">
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                © {currentYear} Mohamed Firas Alfarra. All rights reserved.
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              <Heart className="w-4 h-4 text-red-500 animate-pulse" />
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Made with passion in Damascus, Syria
+              </p>
+            </div>
+            <a
+              href="https://wa.me/963940319051"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span>WhatsApp</span>
+            </a>
           </div>
         </div>
       </div>

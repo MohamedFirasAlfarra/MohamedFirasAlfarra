@@ -1,6 +1,6 @@
 import { ArrowDown, Download, Sparkles } from 'lucide-react';
 import { useState } from 'react';
-import profileImage from "../asset/image.png";
+import profileImage from "../asset/222.png";
 
 export const Hero = () => {
   const [isDownloading, setIsDownloading] = useState(false);
@@ -67,7 +67,7 @@ export const Hero = () => {
             </h1>
             
             <p className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-4 md:mb-6 font-medium">
-              FrontEnd Developer & Mobile Developer, Crafting beautiful, functional, and user-centered digital experiences
+              IT Support | Help Desk | Networking | Windows Server | Front-End Developer | UI/UX Designer
             </p>
             
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-6 md:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
@@ -83,26 +83,7 @@ export const Hero = () => {
                 <span>View My Work</span>
                 <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
               </a>
-              
-              {/* <button
-                onClick={handleDownloadCV}
-                disabled={isDownloading}
-                className={`group px-6 py-3 md:px-8 md:py-3.5 border-2 border-blue-600 dark:border-cyan-500 rounded-lg md:rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
-                  isDownloading 
-                    ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white cursor-wait' 
-                    : 'text-blue-600 dark:text-cyan-500 hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-600 hover:text-white hover:border-transparent hover:shadow-lg md:hover:shadow-xl hover:shadow-cyan-500/25 dark:hover:shadow-cyan-500/10 hover:scale-105'
-                }`}
-              >
-                <Download className={`w-4 h-4 md:w-5 md:h-5 ${isDownloading ? 'animate-bounce' : 'group-hover:animate-pulse'}`} />
-                <span>
-                  {isDownloading ? 'Downloading...' : 'Download CV'}
-                </span>
-                {!isDownloading && (
-                  <span className="hidden sm:inline text-xs opacity-0 group-hover:opacity-100 transition-opacity">
-                    PDF
-                  </span>
-                )}
-              </button> */}
+
             </div>
           </div>
 
@@ -110,7 +91,7 @@ export const Hero = () => {
             <div className="relative animate-fade-in-up animation-delay-200">
               <div className="relative">
                 <div className="flex-1 w-full flex justify-center lg:justify-end lg:items-end h-[600px] lg:h-[calc(100vh-100px)] mt-8 lg:mt-0">
-            <div className="relative w-full h-full max-w-[500px] max-h-[1000px]">
+            <div className="relative w-full h-full max-w-[600px] max-h-[850px]">
              <img
                 src={profileImage}
                 alt="Mohamed Firas Alfarra - Frontend Developer"

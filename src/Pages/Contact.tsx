@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter, Instagram, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 
 export const Contact = () => {
@@ -8,13 +8,38 @@ export const Contact = () => {
     message: '',
   });
 
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'success' | 'error' | 'sending'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('success');
-    setFormData({ name: '', email: '', message: '' });
-    setTimeout(() => setStatus('idle'), 3000);
+    setStatus('sending');
+
+    try {
+      const response = await fetch('https://formspree.io/f/mqpzjykg', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setStatus('idle'), 3000);
+      } else {
+        setStatus('error');
+        setTimeout(() => setStatus('idle'), 3000);
+      }
+    } catch (error) {
+      console.error('Error sending form:', error);
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 3000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -25,16 +50,17 @@ export const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'fralfarra11@gmail.com', href: 'fralfarra11@gmail.com' },
-    { icon: Mail, label: 'Email', value: 'fr.alfarra12@gmail.com', href: 'fr.alfarra12@gmail.com' },
+    { icon: Mail, label: 'Email', value: 'fralfarra11@gmail.com', href: 'mailto:fralfarra11@gmail.com' },
     { icon: Phone, label: 'Phone', value: '+963940319051', href: 'tel:+963940319051' },
-    { icon: MapPin, label: 'Location', value: 'Syria, Damascus', href: 'Syria, Damascus' },
+    { icon: MessageCircle, label: 'WhatsApp', value: '+963940319051', href: 'https://wa.me/963940319051' },
+    { icon: MapPin, label: 'Location', value: 'Syria, Damascus', href: 'https://maps.google.com/?q=Damascus,Syria' },
   ];
 
   const socialLinks = [
     { icon: Github, label: 'GitHub', href: 'https://github.com/MohamedFirasAlfarra' },
     { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/mohamedfirasalfarra' },
     { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/code.withfiras?igsh=MW1nODFydmc2aThpOQ==' },
+    { icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/963940319051' },
   ];
 
   return (
@@ -61,6 +87,8 @@ export const Contact = () => {
                 <a
                   key={item.label}
                   href={item.href}
+                  target={item.href.startsWith('http') ? '_blank' : undefined}
+                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-md transition-all duration-300 hover:scale-105"
                 >
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -85,7 +113,7 @@ export const Contact = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-gray-50 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gradient-to-br hover:from-blue-600 hover:to-cyan-600 hover:text-white transition-all duration-300 hover:scale-110"
+                    className={`w-12 h-12 bg-gray-50 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:text-white transition-all duration-300 hover:scale-110 ${social.label === 'WhatsApp' ? 'hover:bg-gradient-to-br hover:from-green-600 hover:to-green-700' : 'hover:bg-gradient-to-br hover:from-blue-600 hover:to-cyan-600'}`}
                     aria-label={social.label}
                   >
                     <social.icon size={24} />
@@ -147,15 +175,22 @@ export const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                disabled={status === 'sending'}
+                className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                Send Message
-                <Send size={20} />
+                {status === 'sending' ? 'Sending...' : 'Send Message'}
+                {status !== 'sending' && <Send size={20} />}
               </button>
 
               {status === 'success' && (
                 <div className="p-4 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-lg text-center font-semibold">
                   Message sent successfully!
+                </div>
+              )}
+
+              {status === 'error' && (
+                <div className="p-4 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 rounded-lg text-center font-semibold">
+                  Failed to send message. Please try again.
                 </div>
               )}
             </form>

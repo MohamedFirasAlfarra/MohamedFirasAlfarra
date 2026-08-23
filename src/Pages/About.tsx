@@ -1,4 +1,4 @@
-import { Code2, Database, Palette, Rocket, Zap, User, Target, Award, Clock, GraduationCap, Briefcase, BookOpen } from 'lucide-react';
+import { Code2, Database, Palette, User, Target, Award, Clock, GraduationCap, Briefcase, BookOpen, Network, Shield } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -20,15 +20,15 @@ export const About = () => {
       color: 'from-pink-600 to-rose-600'
     },
     { 
-      name: 'Responsive Web Design', 
-      icon: Zap, 
-      description: 'Mobile-First Design, Cross-Browser Compatibility, Performance Optimization',
+      name: 'IT Support & Help Desk', 
+      icon: Shield, 
+      description: 'Windows Troubleshooting, Technical Support, System Maintenance, User Assistance',
       color: 'from-green-600 to-emerald-600'
     },
     { 
-      name: 'Modern Development', 
-      icon: Rocket, 
-      description: 'Git, REST APIs, Component Architecture, Testing, Deployment',
+      name: 'Networking & Infrastructure', 
+      icon: Network, 
+      description: 'Cisco Packet Tracer, Windows Server, Active Directory, DNS, DHCP, VMware',
       color: 'from-orange-600 to-yellow-600'
     },
   ];
@@ -41,11 +41,22 @@ export const About = () => {
       description: 'Developed and maintained multiple responsive websites and dashboards using Nuxt.js, JavaScript, Bootstrap and modern CSS frameworks. Built and deployed 4+ projects for clients in e-commerce, education, and portfolio sectors.'
     },
     { 
-      year: '2023-present', 
+      year: '2022-2023', 
+      title: 'Coach and teacher', 
+      company: 'Future solutions for information technology.',
+      description: 'Coached and taught frontend development to students, helping them build responsive websites and dashboards using Nuxt.js, JavaScript, Bootstrap and modern CSS frameworks.'
+    },
+    { 
+      year: '2023', 
       title: 'Frontend Developer & Mobile Developer', 
       company: 'Freelance / Remote',
       description: 'Developed and maintained multiple responsive websites and dashboards using React.js, Nuxt.js, JavaScript, and modern CSS frameworks. Built and deployed 4+ projects for clients in e-commerce, education, and portfolio sectors.'
-      // description: 'Developing responsive web applications, designing user interfaces, and collaborating with clients to deliver high-quality digital solutions.'
+    },
+    { 
+      year: '2025-2026-present', 
+      title: 'IT Support Specialist', 
+      company: 'Alchamaa Intellectual Properties',
+      description: 'Entering and attaching certificates to the system (company portal); providing technical support and troubleshooting issues related to Windows systems, networks, and user-related matters; assisting with system maintenance, user training, and IT infrastructure support.'
     },
   ];
 
@@ -66,10 +77,13 @@ export const About = () => {
           
           <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6 sm:mb-8"></div>
           
-          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            I'm Mohamed Firas Alfarra, a passionate Frontend Developer and Mobile Developer dedicated to creating 
-            exceptional digital experiences. With a strong foundation in computer science and continuous learning 
-            in modern web technologies, I specialize in building responsive, performant, and user-friendly applications.
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-5xl mx-auto leading-relaxed">
+            I'm Mohamed Firas Alfarra, IT Support / Help Desk-focused Computer Science graduate with hands-on experience in Windows troubleshooting, networking,
+            Cisco Packet Tracer, Windows Server, Active Directory, DNS, DHCP, and VMware.
+            I also have 2+ years of professional experience in Front-End Development and UI/UX, working with React.js, Vue.js, Nuxt.js, Flutter, and modern web technologies.
+             This background has strengthened my problem-solving skills, attention to detail, and ability to understand and support users from both technical and practical perspectives.
+            Currently seeking opportunities in IT Support or Junior IT roles where I can apply my networking and systems knowledge while continuing 
+            to grow professionally in IT infrastructure and technical support.
           </p>
         </div>
 
@@ -99,7 +113,7 @@ export const About = () => {
                   </div>
                   <div>
                     <div className="text-sm text-gray-500 dark:text-gray-400">Specialization</div>
-                    <div className="font-medium text-gray-800 dark:text-white">Frontend Development & Mobile Developer</div>
+                    <div className="font-medium text-gray-800 dark:text-white">IT Support, Networking & Frontend Development</div>
                   </div>
                 </div>
                 
@@ -212,7 +226,7 @@ export const About = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mt-12 sm:mt-16">
           {[
             { number: '8+', label: 'Projects Completed', icon: Code2 },
-            { number: '5+', label: 'Happy Clients', icon: User },
+            { number: '7+', label: 'Happy Clients', icon: User },
             { number: '2+', label: 'Years Experience', icon: Clock },
           ].map((stat, index) => {
             const Icon = stat.icon;

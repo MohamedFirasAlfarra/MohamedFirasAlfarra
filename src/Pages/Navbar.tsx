@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun, Home, User, Briefcase, Mail, Download, Sparkles, ChevronDown } from 'lucide-react';
+import { Menu, X, Moon, Sun, Home, User, Briefcase, Mail, Download, Sparkles, ChevronDown, MessageCircle, Github, Linkedin, Instagram } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 export const Navbar = () => {
@@ -44,6 +44,13 @@ export const Navbar = () => {
     { name: 'About', href: '#about', icon: User },
     { name: 'Projects', href: '#projects', icon: Briefcase },
     { name: 'Contact', href: '#contact', icon: Mail },
+  ];
+
+  const socialLinks = [
+    { icon: Github, label: 'GitHub', href: 'https://github.com/MohamedFirasAlfarra' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/mohamedfirasalfarra' },
+    { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/code.withfiras?igsh=MW1nODFydmc2aThpOQ==' },
+    { icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/963940319051' },
   ];
 
   const handleLinkClick = (href) => {
@@ -135,6 +142,16 @@ export const Navbar = () => {
                 <span className="md:hidden">CV</span>
               </button> */}
 
+              <a
+                href="https://wa.me/963940319051"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-2 p-2.5 md:p-3 rounded-xl bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="w-4 h-4 md:w-5 md:h-5 group-hover:scale-110 transition-transform" />
+              </a>
+
               <button
                 onClick={toggleTheme}
                 className="ml-2 p-2.5 md:p-3 rounded-xl bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900 hover:from-gray-200 hover:to-gray-100 dark:hover:from-gray-700 dark:hover:to-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 group"
@@ -182,13 +199,24 @@ export const Navbar = () => {
                         key={link.name}
                         href={link.href}
                         onClick={() => handleLinkClick(link.href)}
-                        className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-cyan-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300 first:rounded-t-xl last:rounded-b-xl"
+                        className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-cyan-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300 first:rounded-t-xl"
                       >
                         <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
                         <span>{link.name}</span>
                       </a>
                     );
                   })}
+                  <div className="border-t border-gray-200 dark:border-gray-800">
+                    <a
+                      href="https://wa.me/963940319051"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300 rounded-b-xl"
+                    >
+                      <MessageCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-600" />
+                      <span>WhatsApp</span>
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -303,6 +331,27 @@ export const Navbar = () => {
               <Download className="w-4 h-4 sm:w-5 sm:h-5" />
               <span className="text-sm sm:text-base">Download CV (PDF)</span>
             </button>
+
+            <div className="mt-6 pt-6 border-t border-gray-200/50 dark:border-gray-800/50">
+              <div className="text-xs sm:text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3 sm:mb-4">Follow Me</div>
+              <div className="flex gap-2 sm:gap-3">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 ${social.label === 'WhatsApp' ? 'bg-gradient-to-br from-green-500 to-green-600 text-white' : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'}`}
+                      aria-label={social.label}
+                    >
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </div>
